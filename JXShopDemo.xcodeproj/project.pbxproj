@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0443A6271EC556DC00364970 /* chooseGood.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0443A6261EC556DC00364970 /* chooseGood.gif */; };
 		0448EE191EA85005005D36DC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0448EE181EA85005005D36DC /* main.m */; };
 		0448EE1C1EA85005005D36DC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0448EE1B1EA85005005D36DC /* AppDelegate.m */; };
 		0448EE1F1EA85005005D36DC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0448EE1E1EA85005005D36DC /* ViewController.m */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0443A6261EC556DC00364970 /* chooseGood.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = chooseGood.gif; sourceTree = "<group>"; };
 		0448EE141EA85005005D36DC /* JXShopDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JXShopDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0448EE181EA85005005D36DC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0448EE1A1EA85005005D36DC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -92,6 +94,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0443A6251EC5566000364970 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				0443A6261EC556DC00364970 /* chooseGood.gif */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
 		0448EE0B1EA85005005D36DC = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +123,7 @@
 		0448EE161EA85005005D36DC /* JXShopDemo */ = {
 			isa = PBXGroup;
 			children = (
+				0443A6251EC5566000364970 /* images */,
 				0448EE351EA89FF7005D36DC /* Controller */,
 				0448EE361EA89FF7005D36DC /* Model */,
 				0448EE371EA89FF7005D36DC /* View */,
@@ -301,6 +312,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0443A6271EC556DC00364970 /* chooseGood.gif in Resources */,
 				0448EE271EA85005005D36DC /* LaunchScreen.storyboard in Resources */,
 				0448EE241EA85005005D36DC /* Assets.xcassets in Resources */,
 				0448EE221EA85005005D36DC /* Main.storyboard in Resources */,
