@@ -22,7 +22,6 @@
  */
 #define EmptyTitle iOS_Version >= 7.0 ? @"" : @" "
 
-#define SERVERURL  @"http://YOUR_URL"
 
 // RGB颜色
 #define HX_RGB(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]

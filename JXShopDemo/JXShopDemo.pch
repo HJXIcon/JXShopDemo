@@ -8,3 +8,4 @@
 
 #import "GlobalDefine.h"
 #import "ReactiveCocoa/ReactiveCocoa.h"
+#import <ReactiveObjC/ReactiveObjC.h>//RAC和YYKit有冲突,需要把RAC的头文件放

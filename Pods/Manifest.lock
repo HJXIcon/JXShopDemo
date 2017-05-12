@@ -3,6 +3,7 @@ PODS:
   - MJRefresh (3.1.12)
   - ReactiveCocoa (5.0.3):
     - ReactiveSwift (~> 1.1)
+  - ReactiveObjC (3.0.0)
   - ReactiveSwift (1.1.1):
     - Result (~> 3.2)
   - Result (3.2.1)
@@ -16,6 +17,7 @@ DEPENDENCIES:
   - MJExtension (~> 3.0.13)
   - MJRefresh (~> 3.1.12)
   - ReactiveCocoa (~> 5.0.0)
+  - ReactiveObjC
   - SDCycleScrollView (~> 1.65)
   - SDWebImage (~> 3.8.2)
 
@@ -23,11 +25,12 @@ SPEC CHECKSUMS:
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   ReactiveCocoa: 066a855f613fb72f68258771095805fdb10312d2
+  ReactiveObjC: ce79989e8684b9086b5f8d0c74bc7b81a8729c9e
   ReactiveSwift: 2489549e3231a6ff68ec99f3d320bb264f10ba0a
   Result: 2453a22e5c5b11c0c3a478736e82cd02f763b781
   SDCycleScrollView: f72904c77698a7f93a41bcbbc2d78b073bf7326c
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
 
-PODFILE CHECKSUM: d1aaeba3cba51fcb72083d71402ac703b9ba9dbf
+PODFILE CHECKSUM: 2dc1a67963ecfe7a31ba642c5f0519819b198b83
 
 COCOAPODS: 1.2.0.beta.1

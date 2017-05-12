@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-@class PPNumberButton,JXCartModel;
+#import "PPNumberButton.h"
+@class JXCartModel;
 
 @interface JXCartCell : UITableViewCell
 
