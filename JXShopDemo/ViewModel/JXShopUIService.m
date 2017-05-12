@@ -9,6 +9,7 @@
 #import "JXShopUIService.h"
 #import "JXShopCarTableHeaderView.h"
 #import "JXCartCell.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
 
 @implementation JXShopUIService
 
@@ -25,9 +26,27 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     JXCartCell *cell = [tableView dequeueReusableCellWithIdentifier:@"JXCartCell"];
     
+    [self configureCell:cell forRowAtIndexPath:indexPath];
     
     return cell;
 }
+
+
+- (void)configureCell:(JXCartCell *)cell
+    forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSInteger section = indexPath.section;
+    NSInteger row = indexPath.row;
+    
+//    JXCartModel *model = self.viewModel.cartData[section][row];
+    //cell 选中
+    kWeakSelf(self);
+    
+    
+    
+}
+
+
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return [JXCartCell getCartCellHeight];

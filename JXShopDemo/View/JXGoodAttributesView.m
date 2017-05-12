@@ -8,7 +8,7 @@
 
 #import "JXGoodAttributesView.h"
 #import "JXGoodAttrModel.h"
-#import <UIImageView+WebCache.h>
+#import "UIImageView+WebCache.h"
 #import "GlobalDefine.h"
 #import "ACMacros.h"
 #import "JXGoodAttributesCell.h"

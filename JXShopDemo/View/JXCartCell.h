@@ -7,14 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+@class PPNumberButton,JXCartModel;
 
 @interface JXCartCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIButton *selectShopGoodsButton;
 
-//@property (weak, nonatomic) IBOutlet JSNummberCount *nummberCount;
-//
-//@property (nonatomic, strong) JSCartModel *model;
+@property (weak, nonatomic) IBOutlet PPNumberButton *nummberCount;
+
+@property (nonatomic, strong) JXCartModel *model;
 
 + (CGFloat)getCartCellHeight;
 

@@ -25,13 +25,15 @@
 		0448EE4F1EA8BBC2005D36DC /* JXGoodAttributesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0448EE4E1EA8BBC2005D36DC /* JXGoodAttributesCell.m */; };
 		0448EE521EA8C9F0005D36DC /* UIView+JXShopCarAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0448EE511EA8C9F0005D36DC /* UIView+JXShopCarAnimation.m */; };
 		0448EE551EA8CBF0005D36DC /* JXGoodDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0448EE541EA8CBF0005D36DC /* JXGoodDetailsViewController.m */; };
+		0449D8A81EC5AF1E0000890F /* PPNumberButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0449D8A71EC5AF1E0000890F /* PPNumberButton.m */; };
+		0449D8AB1EC5B3380000890F /* JXCartModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0449D8AA1EC5B3380000890F /* JXCartModel.m */; };
 		049ED3341EA99A0B00F924E1 /* JXGoodDetailsPictureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 049ED3331EA99A0B00F924E1 /* JXGoodDetailsPictureCell.m */; };
 		049ED3371EA99EDB00F924E1 /* JXShopCarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 049ED3361EA99EDB00F924E1 /* JXShopCarViewController.m */; };
 		049ED33A1EA99F8200F924E1 /* JXShopViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 049ED3391EA99F8200F924E1 /* JXShopViewModel.m */; };
 		049ED33D1EA9B4E600F924E1 /* JXShopUIService.m in Sources */ = {isa = PBXBuildFile; fileRef = 049ED33C1EA9B4E600F924E1 /* JXShopUIService.m */; };
 		049ED3401EA9B4FE00F924E1 /* JXShopCarViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 049ED33F1EA9B4FE00F924E1 /* JXShopCarViewModel.m */; };
 		049ED3431EA9B75800F924E1 /* JXShopCarTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 049ED3421EA9B75800F924E1 /* JXShopCarTableHeaderView.m */; };
-		CCA9AC2C52BD13FE88220441 /* libPods-JXShopDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E66338FCB7731021F0B06DD /* libPods-JXShopDemo.a */; };
+		1B4DAD8FB4F54A27782C3B48 /* Pods_JXShopDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6B22B27185B83A2695255E6 /* Pods_JXShopDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +71,10 @@
 		0448EE511EA8C9F0005D36DC /* UIView+JXShopCarAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+JXShopCarAnimation.m"; path = "../../View/UIView+JXShopCarAnimation.m"; sourceTree = "<group>"; };
 		0448EE531EA8CBF0005D36DC /* JXGoodDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXGoodDetailsViewController.h; sourceTree = "<group>"; };
 		0448EE541EA8CBF0005D36DC /* JXGoodDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXGoodDetailsViewController.m; sourceTree = "<group>"; };
+		0449D8A61EC5AF1E0000890F /* PPNumberButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPNumberButton.h; sourceTree = "<group>"; };
+		0449D8A71EC5AF1E0000890F /* PPNumberButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPNumberButton.m; sourceTree = "<group>"; };
+		0449D8A91EC5B3380000890F /* JXCartModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXCartModel.h; sourceTree = "<group>"; };
+		0449D8AA1EC5B3380000890F /* JXCartModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXCartModel.m; sourceTree = "<group>"; };
 		049ED3321EA99A0B00F924E1 /* JXGoodDetailsPictureCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXGoodDetailsPictureCell.h; sourceTree = "<group>"; };
 		049ED3331EA99A0B00F924E1 /* JXGoodDetailsPictureCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXGoodDetailsPictureCell.m; sourceTree = "<group>"; };
 		049ED3351EA99EDB00F924E1 /* JXShopCarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXShopCarViewController.h; sourceTree = "<group>"; };
@@ -83,8 +89,8 @@
 		049ED3421EA9B75800F924E1 /* JXShopCarTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXShopCarTableHeaderView.m; sourceTree = "<group>"; };
 		049ED3441EA9B82700F924E1 /* JXShopDemo.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXShopDemo.pch; sourceTree = "<group>"; };
 		0BDCF3F7CDAF28473C378E52 /* Pods-JXShopDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JXShopDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-JXShopDemo/Pods-JXShopDemo.release.xcconfig"; sourceTree = "<group>"; };
-		0E66338FCB7731021F0B06DD /* libPods-JXShopDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JXShopDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		407C7F9E41E789A679003F91 /* Pods-JXShopDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JXShopDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JXShopDemo/Pods-JXShopDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		F6B22B27185B83A2695255E6 /* Pods_JXShopDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JXShopDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CCA9AC2C52BD13FE88220441 /* libPods-JXShopDemo.a in Frameworks */,
+				1B4DAD8FB4F54A27782C3B48 /* Pods_JXShopDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,6 +178,8 @@
 			children = (
 				0448EE431EA8A1E8005D36DC /* JXGoodAttrModel.h */,
 				0448EE441EA8A1E8005D36DC /* JXGoodAttrModel.m */,
+				0449D8A91EC5B3380000890F /* JXCartModel.h */,
+				0449D8AA1EC5B3380000890F /* JXCartModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -210,6 +218,7 @@
 		0448EE391EA8A01B005D36DC /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				0449D8A51EC5AF1E0000890F /* PPNumberButton */,
 				0448EE461EA8AB4A005D36DC /* JXTagView */,
 				0448EE3F1EA8A188005D36DC /* ACMacros.h */,
 				0448EE3E1EA8A165005D36DC /* GlobalDefine.h */,
@@ -242,10 +251,19 @@
 			path = JXTagView;
 			sourceTree = "<group>";
 		};
+		0449D8A51EC5AF1E0000890F /* PPNumberButton */ = {
+			isa = PBXGroup;
+			children = (
+				0449D8A61EC5AF1E0000890F /* PPNumberButton.h */,
+				0449D8A71EC5AF1E0000890F /* PPNumberButton.m */,
+			);
+			path = PPNumberButton;
+			sourceTree = "<group>";
+		};
 		27E81167B5EB88D3EE97C3E2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0E66338FCB7731021F0B06DD /* libPods-JXShopDemo.a */,
+				F6B22B27185B83A2695255E6 /* Pods_JXShopDemo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -392,6 +410,7 @@
 				0443A6301EC55F5100364970 /* JXCartCell.m in Sources */,
 				0448EE3D1EA8A047005D36DC /* JXGoodAttributesView.m in Sources */,
 				049ED3431EA9B75800F924E1 /* JXShopCarTableHeaderView.m in Sources */,
+				0449D8AB1EC5B3380000890F /* JXCartModel.m in Sources */,
 				0448EE551EA8CBF0005D36DC /* JXGoodDetailsViewController.m in Sources */,
 				049ED33D1EA9B4E600F924E1 /* JXShopUIService.m in Sources */,
 				049ED33A1EA99F8200F924E1 /* JXShopViewModel.m in Sources */,
@@ -399,6 +418,7 @@
 				0448EE4F1EA8BBC2005D36DC /* JXGoodAttributesCell.m in Sources */,
 				0448EE1C1EA85005005D36DC /* AppDelegate.m in Sources */,
 				0448EE191EA85005005D36DC /* main.m in Sources */,
+				0449D8A81EC5AF1E0000890F /* PPNumberButton.m in Sources */,
 				0448EE521EA8C9F0005D36DC /* UIView+JXShopCarAnimation.m in Sources */,
 				0448EE341EA8950F005D36DC /* UIScrollView+JXPage.m in Sources */,
 				0448EE4C1EA8B04E005D36DC /* JXTagView.m in Sources */,
