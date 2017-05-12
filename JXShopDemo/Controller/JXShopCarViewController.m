@@ -10,7 +10,7 @@
 #import "JXShopUIService.h"
 #import "JXShopCarViewModel.h"
 #import "JXShopCarTableHeaderView.h"
-
+#import "JXCartCell.h"
 
 
 @interface JXShopCarViewController ()
@@ -43,6 +43,7 @@
         _tableView.tableFooterView = [[UIView alloc]init];
         
         [_tableView registerClass:[JXShopCarTableHeaderView class] forHeaderFooterViewReuseIdentifier:@"JXShopCarTableHeaderView"];
+        [_tableView registerNib:[UINib nibWithNibName:@"JXCartCell" bundle:nil] forCellReuseIdentifier:@"JXCartCell"];
         
     }
     return _tableView;

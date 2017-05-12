@@ -8,6 +8,7 @@
 
 #import "JXShopUIService.h"
 #import "JXShopCarTableHeaderView.h"
+#import "JXCartCell.h"
 
 @implementation JXShopUIService
 
@@ -22,11 +23,14 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"cell"];
+    JXCartCell *cell = [tableView dequeueReusableCellWithIdentifier:@"JXCartCell"];
     
-    cell.textLabel.text = [NSString stringWithFormat:@"index -- %ld",indexPath.row];
     
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return [JXCartCell getCartCellHeight];
 }
 
 
@@ -41,5 +45,7 @@
     
     return [JXShopCarTableHeaderView getCarHeaderHeight];
 }
+
+
 
 @end
