@@ -10,7 +10,7 @@
 #import "JXShopUIService.h"
 #import "JXShopCarViewModel.h"
 #import "JXShopCarTableHeaderView.h"
-#import "JXCartCell.h"
+#import "JXShopCartCell.h"
 
 
 @interface JXShopCarViewController ()
@@ -43,7 +43,7 @@
         _tableView.tableFooterView = [[UIView alloc]init];
         
         [_tableView registerClass:[JXShopCarTableHeaderView class] forHeaderFooterViewReuseIdentifier:@"JXShopCarTableHeaderView"];
-        [_tableView registerNib:[UINib nibWithNibName:@"JXCartCell" bundle:nil] forCellReuseIdentifier:@"JXCartCell"];
+        [_tableView registerClass:[JXShopCartCell class] forCellReuseIdentifier:@"JXShopCartCell"];
         
     }
     return _tableView;
@@ -55,6 +55,8 @@
     
     if (!_viewModel) {
         _viewModel = [[JXShopCarViewModel alloc] init];
+        _viewModel.cartTableView = self.tableView;
+        _viewModel.cartVC = self;
     }
     return _viewModel;
 }
@@ -79,6 +81,9 @@
     self.navigationItem.title = @"购物车";
     
     [self.view addSubview:self.tableView];
+    
+    // 获取数据
+    [self.viewModel getData];
 }
 
 

@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <IQKeyboardManager/IQKeyboardManager.h>
 
 @interface AppDelegate ()
 
@@ -16,7 +17,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    
+     [[IQKeyboardManager sharedManager] setToolbarDoneBarButtonItemText:@"完成"];
+    
     return YES;
 }
 

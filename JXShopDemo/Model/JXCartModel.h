@@ -17,7 +17,7 @@
 @property (nonatomic, strong) NSString  *p_name;
 
 @property (nonatomic, strong) NSString  *p_imageUrl;
-
+// 库存
 @property (nonatomic, assign) NSInteger p_stock;
 
 @property (nonatomic, assign) NSInteger p_quantity;

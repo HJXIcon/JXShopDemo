@@ -8,12 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-@class JXCartViewController;
+@class JXShopCarViewController;
 
 @interface JXShopCarViewModel : NSObject
 
 
-@property (nonatomic, weak  ) JXCartViewController *cartVC;
+@property (nonatomic, weak) JXShopCarViewController *cartVC;
 @property (nonatomic, strong) NSMutableArray       *cartData;
 @property (nonatomic, weak  ) UITableView          *cartTableView;
 
@@ -35,6 +35,7 @@
  *  购物车商品数量
  */
 @property (nonatomic, assign) NSInteger             cartGoodsCount;
+
 /**
  *  当前所选商品数量
  */
@@ -46,7 +47,7 @@
 //全选
 - (void)selectAll:(BOOL)isSelect;
 
-//row select
+//选中那个商品
 - (void)rowSelect:(BOOL)isSelect
         IndexPath:(NSIndexPath *)indexPath;
 

@@ -8,26 +8,27 @@
 
 #import "JXShopUIService.h"
 #import "JXShopCarTableHeaderView.h"
-#import "JXCartCell.h"
-#import <ReactiveObjC/ReactiveObjC.h>
+#import "JXShopCartCell.h"
 #import "JXShopCarViewModel.h"
-
+#import "JXCartModel.h"
 
 @implementation JXShopUIService
 
 
 #pragma mark - UITableViewDelegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 5;
+    return self.viewModel.cartData.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 2;
+    
+     return [self.viewModel.cartData[section] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    JXCartCell *cell = [tableView dequeueReusableCellWithIdentifier:@"JXCartCell"];
+    JXShopCartCell *cell = [tableView dequeueReusableCellWithIdentifier:@"JXShopCartCell"];
     
+    cell.shopcartCellEditBlock = nil;
     [self configureCell:cell forRowAtIndexPath:indexPath];
     
     return cell;
@@ -43,7 +44,7 @@
  // 3.发送信号 - (void)sendNext:(id)value
  
  */
-- (void)configureCell:(JXCartCell *)cell
+- (void)configureCell:(JXShopCartCell *)cell
     forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSInteger section = indexPath.section;
@@ -51,22 +52,15 @@
     
     JXCartModel *model = self.viewModel.cartData[section][row];
     
-    //cell 选中
+    
     kWeakSelf(self);
-    // rac_signalForControlEvents：用于监听某个事件。
-    // takeUntil:---给takeUntil传的是哪个信号，那么当这个信号发送信号或sendCompleted，就不能再接受源信号的内容了.
-    
-    /// 如果不加takeUntil:cell.rac_prepareForReuseSignal，那么每次Cell被重用时，该button都会被addTarget:selector。
-    [[[cell.selectShopGoodsButton rac_signalForControlEvents:UIControlEventTouchUpInside] takeUntil:cell.rac_prepareForReuseSignal] subscribeNext:^(UIButton *btn) {
-        btn.selected = !btn.selected;
-        [weakself.viewModel rowSelect:btn.selected IndexPath:indexPath];
-    }];
-    
     
     //数量改变
-    cell.nummberCount.resultBlock = ^(NSString *changeCount){
+    cell.shopcartCellEditBlock = ^(NSInteger changeCount){
         
-        [weakself.viewModel rowChangeQuantity:[changeCount integerValue] indexPath:indexPath];
+        NSLog(@"section == %ld,row == %ld",indexPath.section,indexPath.row);
+        
+        [weakself.viewModel rowChangeQuantity:changeCount  indexPath:indexPath];
     };
     
     cell.model = model;
@@ -75,8 +69,10 @@
 
 
 
+
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return [JXCartCell getCartCellHeight];
+    return [JXShopCartCell getCartCellHeight];
 }
 
 

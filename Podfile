@@ -12,7 +12,7 @@ pod 'MJRefresh', '~> 3.1.12'
 pod 'SDCycleScrollView', '~> 1.65'
 pod 'MJExtension', '~> 3.0.13'
 pod 'SDWebImage', '~> 3.8.2'
-pod 'ReactiveCocoa', '~> 5.0.0'
-pod 'ReactiveObjC'#OC版本使用
+pod 'IQKeyboardManager', '~> 4.0.9'
+pod 'Masonry', '~> 1.0.2'
 
 end
