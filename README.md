@@ -32,3 +32,8 @@
 
 ### 加入购物车效果
 ![image](https://github.com/HJXIcon/JXShopDemo/blob/master/JXShopDemo/images/chooseGood.gif)
+
+### 购物车效果图
+![image](https://github.com/HJXIcon/JXShopDemo/blob/master/JXShopDemo/images/shopCart.gif)
+
+
