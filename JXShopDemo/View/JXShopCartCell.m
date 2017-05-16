@@ -10,7 +10,7 @@
 #import "UIImageView+WebCache.h"
 #import "PPNumberButton.h"
 #import <Masonry/Masonry.h>
-#import "JXCartModel.h"
+#import "JXShopcartProductModel.h"
 
 @interface JXShopCartCell ()
 
@@ -89,6 +89,7 @@
         };
         
         _shopcartCountView.minValue = 1;
+        _shopcartCountView.shakeAnimation = YES;
         _shopcartCountView.decreaseImage = [UIImage imageNamed:@"decrease_eleme"];
         _shopcartCountView.increaseImage = [UIImage imageNamed:@"increase_eleme"];
     }
@@ -163,19 +164,21 @@
 
 
 #pragma mark - setter
-- (void)setModel:(JXCartModel *)model{
+- (void)setModel:(JXShopcartProductModel *)model{
     _model = model;
     
+    self.productSelectButton.selected = model.isSelected;
+    NSURL *encodingURL = [NSURL URLWithString:[model.productPicUri stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]]];
     
-    self.productSelectButton.selected = model.isSelect;
-    [self.productImageView sd_setImageWithURL:[NSURL URLWithString:model.p_imageUrl]];
-    self.productNameLable.text = model.p_name;
+    [self.productImageView sd_setImageWithURL:encodingURL];
+    
+    self.productNameLable.text = model.productName;
     
     self.productSizeLable.text = @"W:0 H:75 D:190";
-    self.productPriceLable.text = [NSString stringWithFormat:@"%.2f",model.p_price];
+    self.productPriceLable.text = [NSString stringWithFormat:@"%.2f",model.productPrice];
     
-    self.shopcartCountView.currentNumber = [NSString stringWithFormat:@"%ld",model.p_quantity];
-    self.productStockLable.text = [NSString stringWithFormat:@"剩余库存:%ld",model.p_stock];
+    self.shopcartCountView.currentNumber = [NSString stringWithFormat:@"%ld",model.productQty];
+    self.productStockLable.text = [NSString stringWithFormat:@"剩余库存:%ld",model.productStocks];
 ;
 }
 

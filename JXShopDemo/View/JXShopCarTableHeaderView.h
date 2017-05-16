@@ -7,14 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+@class JXShopcartBrandModel;
 
+
+typedef void(^JXShopcartHeaderViewSelectBlock)(BOOL isSelected);
+typedef void(^JXShopcartHeaderViewNameClickBlock)();
 
 @interface JXShopCarTableHeaderView : UITableViewHeaderFooterView
 
 /** 点击店铺选择按钮回调*/
-@property (nonatomic, copy)void(^clickStoreNameBlock)();
+@property (nonatomic, copy)JXShopcartHeaderViewSelectBlock selectStoreBlock;
+
 /** 点击店铺名字回调*/
-@property (nonatomic, copy)void(^selectStoreBlock)();
+@property (nonatomic, copy)JXShopcartHeaderViewNameClickBlock clickNameBlock;
+
+
+@property(nonatomic, strong) JXShopcartBrandModel *model;
 
 + (CGFloat)getCarHeaderHeight;
 

@@ -10,63 +10,52 @@
 #import "JXShopCarTableHeaderView.h"
 #import "JXShopCartCell.h"
 #import "JXShopCarViewModel.h"
-#import "JXCartModel.h"
+#import "JXShopcartBrandModel.h"
+#import "JXShopcartProductModel.h"
 
 @implementation JXShopUIService
 
 
 #pragma mark - UITableViewDelegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return self.viewModel.cartData.count;
+    return self.viewModel.shopcartListArray.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-     return [self.viewModel.cartData[section] count];
+    JXShopcartBrandModel *brandModel = self.viewModel.shopcartListArray[section];
+    NSArray *productArray = brandModel.products;
+    return productArray.count;
+
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     JXShopCartCell *cell = [tableView dequeueReusableCellWithIdentifier:@"JXShopCartCell"];
     
-    cell.shopcartCellEditBlock = nil;
-    [self configureCell:cell forRowAtIndexPath:indexPath];
+    JXShopcartBrandModel *brandModel = self.viewModel.shopcartListArray[indexPath.section];
+    
+    NSArray *productArray = brandModel.products;
+    
+    cell.model = productArray[indexPath.row];
+
+    __weak __typeof(self) weakSelf = self;
+    
+    /// 选中
+    cell.shopcartCellBlock = ^(BOOL isSelected){
+        if (weakSelf.shopcartProxyProductSelectBlock) {
+            weakSelf.shopcartProxyProductSelectBlock(isSelected, indexPath);
+        }
+    };
+    
+    /// 数量改变
+    cell.shopcartCellEditBlock = ^(NSInteger count){
+        if (weakSelf.shopcartProxyChangeCountBlock) {
+            weakSelf.shopcartProxyChangeCountBlock(count, indexPath);
+        }
+    };
     
     return cell;
 }
-
-
-
-/*!
- 
- // RACSignal使用步骤：
- // 1.创建信号 + (RACSignal *)createSignal:(RACDisposable * (^)(id<RACSubscriber> subscriber))didSubscribe
- // 2.订阅信号,才会激活信号. - (RACDisposable *)subscribeNext:(void (^)(id x))nextBlock
- // 3.发送信号 - (void)sendNext:(id)value
- 
- */
-- (void)configureCell:(JXShopCartCell *)cell
-    forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSInteger section = indexPath.section;
-    NSInteger row = indexPath.row;
-    
-    JXCartModel *model = self.viewModel.cartData[section][row];
-    
-    
-    kWeakSelf(self);
-    
-    //数量改变
-    cell.shopcartCellEditBlock = ^(NSInteger changeCount){
-        
-        NSLog(@"section == %ld,row == %ld",indexPath.section,indexPath.row);
-        
-        [weakself.viewModel rowChangeQuantity:changeCount  indexPath:indexPath];
-    };
-    
-    cell.model = model;
-    
-}
-
 
 
 
@@ -79,13 +68,44 @@
 #pragma mark - headerFooter
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     
-    JXShopCarTableHeaderView * header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"JXShopCarTableHeaderView"];
-    return header;
+    JXShopCarTableHeaderView * shopcartHeaderView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"JXShopCarTableHeaderView"];
+    
+    JXShopcartBrandModel *brandModel =self.viewModel.shopcartListArray[section];
+    
+    shopcartHeaderView.model = brandModel;
+    
+    __weak __typeof(self) weakSelf = self;
+    shopcartHeaderView.selectStoreBlock = ^(BOOL isSelected){
+        
+        if (weakSelf.shopcartProxyBrandSelectBlock) {
+            weakSelf.shopcartProxyBrandSelectBlock(isSelected, section);
+        }
+    };
+    
+    return shopcartHeaderView;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     
     return [JXShopCarTableHeaderView getCarHeaderHeight];
+}
+
+
+#pragma mark - ******* 删除 收藏
+- (NSArray<UITableViewRowAction *> *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewRowAction *deleteAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDestructive title:@"删除" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
+        if (self.shopcartProxyDeleteBlock) {
+            self.shopcartProxyDeleteBlock(indexPath);
+        }
+    }];
+    
+    UITableViewRowAction *starAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"收藏" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
+        if (self.shopcartProxyStarBlock) {
+            self.shopcartProxyStarBlock(indexPath);
+        }
+    }];
+    
+    return @[deleteAction, starAction];
 }
 
 

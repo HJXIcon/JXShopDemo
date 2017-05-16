@@ -7,7 +7,7 @@
 //
 
 #import "JXShopCarTableHeaderView.h"
-
+#import "JXShopcartBrandModel.h"
 
 @interface JXShopCarTableHeaderView()
 
@@ -18,6 +18,15 @@
 
 @implementation JXShopCarTableHeaderView
 
+
+#pragma mark - setter
+- (void)setModel:(JXShopcartBrandModel *)model{
+    _model = model;
+    
+    [self.storeNameButton setTitle:model.brandName forState:UIControlStateNormal];
+    self.selectStoreGoodsButton.selected = model.isSelected;
+    
+}
 
 
 - (instancetype)initWithReuseIdentifier:(NSString *)reuseIdentifier{
@@ -65,15 +74,16 @@
 
 - (void)storeNameAction{
     
-    if (self.clickStoreNameBlock) {
-        self.clickStoreNameBlock();
+    if (self.clickNameBlock) {
+        self.clickNameBlock();
     }
 }
 
 
 - (void)selectStoreAction{
+    self.selectStoreGoodsButton.selected = !self.selectStoreGoodsButton.isSelected;
     if (self.selectStoreBlock) {
-        self.selectStoreBlock();
+        self.selectStoreBlock(self.selectStoreGoodsButton.selected);
     }
     
 }

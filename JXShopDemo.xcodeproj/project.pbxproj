@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04351EC61ECA94C4007A24D3 /* JXShopcartProductModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04351EC51ECA94C4007A24D3 /* JXShopcartProductModel.m */; };
+		04351EC91ECA94D9007A24D3 /* JXShopcartBrandModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04351EC81ECA94D9007A24D3 /* JXShopcartBrandModel.m */; };
+		04351ECB1ECA979F007A24D3 /* shopcart.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04351ECA1ECA979F007A24D3 /* shopcart.plist */; };
+		04351ECE1ECAABA0007A24D3 /* JXShopcartBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04351ECD1ECAABA0007A24D3 /* JXShopcartBottomView.m */; };
+		04351ED21ECADE89007A24D3 /* shopCart.gif in Resources */ = {isa = PBXBuildFile; fileRef = 04351ED11ECADE89007A24D3 /* shopCart.gif */; };
 		0443A6271EC556DC00364970 /* chooseGood.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0443A6261EC556DC00364970 /* chooseGood.gif */; };
 		0448EE191EA85005005D36DC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0448EE181EA85005005D36DC /* main.m */; };
 		0448EE1C1EA85005005D36DC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0448EE1B1EA85005005D36DC /* AppDelegate.m */; };
@@ -24,7 +29,6 @@
 		0448EE521EA8C9F0005D36DC /* UIView+JXShopCarAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0448EE511EA8C9F0005D36DC /* UIView+JXShopCarAnimation.m */; };
 		0448EE551EA8CBF0005D36DC /* JXGoodDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0448EE541EA8CBF0005D36DC /* JXGoodDetailsViewController.m */; };
 		0449D8A81EC5AF1E0000890F /* PPNumberButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0449D8A71EC5AF1E0000890F /* PPNumberButton.m */; };
-		0449D8AB1EC5B3380000890F /* JXCartModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0449D8AA1EC5B3380000890F /* JXCartModel.m */; };
 		04982E451EC9A7CC0084E90F /* JXShopCartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04982E441EC9A7CC0084E90F /* JXShopCartCell.m */; };
 		049ED3341EA99A0B00F924E1 /* JXGoodDetailsPictureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 049ED3331EA99A0B00F924E1 /* JXGoodDetailsPictureCell.m */; };
 		049ED3371EA99EDB00F924E1 /* JXShopCarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 049ED3361EA99EDB00F924E1 /* JXShopCarViewController.m */; };
@@ -36,6 +40,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04351EC41ECA94C4007A24D3 /* JXShopcartProductModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXShopcartProductModel.h; sourceTree = "<group>"; };
+		04351EC51ECA94C4007A24D3 /* JXShopcartProductModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXShopcartProductModel.m; sourceTree = "<group>"; };
+		04351EC71ECA94D9007A24D3 /* JXShopcartBrandModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXShopcartBrandModel.h; sourceTree = "<group>"; };
+		04351EC81ECA94D9007A24D3 /* JXShopcartBrandModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXShopcartBrandModel.m; sourceTree = "<group>"; };
+		04351ECA1ECA979F007A24D3 /* shopcart.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = shopcart.plist; sourceTree = "<group>"; };
+		04351ECC1ECAABA0007A24D3 /* JXShopcartBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXShopcartBottomView.h; sourceTree = "<group>"; };
+		04351ECD1ECAABA0007A24D3 /* JXShopcartBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXShopcartBottomView.m; sourceTree = "<group>"; };
+		04351ED11ECADE89007A24D3 /* shopCart.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = shopCart.gif; sourceTree = "<group>"; };
 		0443A6261EC556DC00364970 /* chooseGood.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = chooseGood.gif; sourceTree = "<group>"; };
 		0448EE141EA85005005D36DC /* JXShopDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JXShopDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0448EE181EA85005005D36DC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -69,8 +81,6 @@
 		0448EE541EA8CBF0005D36DC /* JXGoodDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXGoodDetailsViewController.m; sourceTree = "<group>"; };
 		0449D8A61EC5AF1E0000890F /* PPNumberButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPNumberButton.h; sourceTree = "<group>"; };
 		0449D8A71EC5AF1E0000890F /* PPNumberButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPNumberButton.m; sourceTree = "<group>"; };
-		0449D8A91EC5B3380000890F /* JXCartModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXCartModel.h; sourceTree = "<group>"; };
-		0449D8AA1EC5B3380000890F /* JXCartModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXCartModel.m; sourceTree = "<group>"; };
 		04982E431EC9A7CC0084E90F /* JXShopCartCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXShopCartCell.h; sourceTree = "<group>"; };
 		04982E441EC9A7CC0084E90F /* JXShopCartCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXShopCartCell.m; sourceTree = "<group>"; };
 		049ED3321EA99A0B00F924E1 /* JXGoodDetailsPictureCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXGoodDetailsPictureCell.h; sourceTree = "<group>"; };
@@ -106,6 +116,7 @@
 		0443A6251EC5566000364970 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				04351ED11ECADE89007A24D3 /* shopCart.gif */,
 				0443A6261EC556DC00364970 /* chooseGood.gif */,
 			);
 			path = images;
@@ -152,6 +163,7 @@
 		0448EE171EA85005005D36DC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				04351ECA1ECA979F007A24D3 /* shopcart.plist */,
 				0448EE181EA85005005D36DC /* main.m */,
 				049ED3441EA9B82700F924E1 /* JXShopDemo.pch */,
 			);
@@ -176,8 +188,10 @@
 			children = (
 				0448EE431EA8A1E8005D36DC /* JXGoodAttrModel.h */,
 				0448EE441EA8A1E8005D36DC /* JXGoodAttrModel.m */,
-				0449D8A91EC5B3380000890F /* JXCartModel.h */,
-				0449D8AA1EC5B3380000890F /* JXCartModel.m */,
+				04351EC71ECA94D9007A24D3 /* JXShopcartBrandModel.h */,
+				04351EC81ECA94D9007A24D3 /* JXShopcartBrandModel.m */,
+				04351EC41ECA94C4007A24D3 /* JXShopcartProductModel.h */,
+				04351EC51ECA94C4007A24D3 /* JXShopcartProductModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -195,6 +209,8 @@
 				049ED3421EA9B75800F924E1 /* JXShopCarTableHeaderView.m */,
 				04982E431EC9A7CC0084E90F /* JXShopCartCell.h */,
 				04982E441EC9A7CC0084E90F /* JXShopCartCell.m */,
+				04351ECC1ECAABA0007A24D3 /* JXShopcartBottomView.h */,
+				04351ECD1ECAABA0007A24D3 /* JXShopcartBottomView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -335,8 +351,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04351ED21ECADE89007A24D3 /* shopCart.gif in Resources */,
 				0443A6271EC556DC00364970 /* chooseGood.gif in Resources */,
 				0448EE271EA85005005D36DC /* LaunchScreen.storyboard in Resources */,
+				04351ECB1ECA979F007A24D3 /* shopcart.plist in Resources */,
 				0448EE241EA85005005D36DC /* Assets.xcassets in Resources */,
 				0448EE221EA85005005D36DC /* Main.storyboard in Resources */,
 			);
@@ -406,9 +424,11 @@
 				049ED3341EA99A0B00F924E1 /* JXGoodDetailsPictureCell.m in Sources */,
 				0448EE3D1EA8A047005D36DC /* JXGoodAttributesView.m in Sources */,
 				049ED3431EA9B75800F924E1 /* JXShopCarTableHeaderView.m in Sources */,
-				0449D8AB1EC5B3380000890F /* JXCartModel.m in Sources */,
 				0448EE551EA8CBF0005D36DC /* JXGoodDetailsViewController.m in Sources */,
 				049ED33D1EA9B4E600F924E1 /* JXShopUIService.m in Sources */,
+				04351EC91ECA94D9007A24D3 /* JXShopcartBrandModel.m in Sources */,
+				04351ECE1ECAABA0007A24D3 /* JXShopcartBottomView.m in Sources */,
+				04351EC61ECA94C4007A24D3 /* JXShopcartProductModel.m in Sources */,
 				049ED33A1EA99F8200F924E1 /* JXShopViewModel.m in Sources */,
 				0448EE1F1EA85005005D36DC /* ViewController.m in Sources */,
 				0448EE4F1EA8BBC2005D36DC /* JXGoodAttributesCell.m in Sources */,

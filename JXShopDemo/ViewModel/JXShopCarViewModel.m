@@ -7,162 +7,244 @@
 //
 
 #import "JXShopCarViewModel.h"
-#import "JXCartModel.h"
+#import "JXShopcartBrandModel.h"
+#import <MJExtension/MJExtension.h>
+#import "JXShopcartProductModel.h"
 
 
-@interface JXShopCarViewModel(){
-    
-    NSArray *_shopGoodsCount; // 店铺下商品数据
-    NSArray *_goodsPicArray; // 店铺下商品图片
-    NSArray *_goodsPriceArray; // 店铺下商品价格
-    NSArray *_goodsQuantityArray; // 店铺下商品数量数组
-    
-}
+@interface JXShopCarViewModel()
+
 
 @end
+
 @implementation JXShopCarViewModel
-
-
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        
-        _shopGoodsCount  = @[@(1),@(8),@(5),@(2),@(4),@(4)];
-        _goodsPicArray  = @[
-                            @"http://pic.5tu.cn/uploads/allimg/1606/pic_5tu_big_2016052901023305535.jpg",
-                            @"http://pic.5tu.cn/uploads/allimg/1605/pic_5tu_big_2016052901023303745.jpg",
-                            @"http://pic.5tu.cn/uploads/allimg/1605/pic_5tu_big_201605291711245481.jpg",
-                            @"http://pic.5tu.cn/uploads/allimg/1605/pic_5tu_big_2016052901023285762.jpg",
-                            @"http://pic.5tu.cn/uploads/allimg/1506/091630516760.jpg",
-                            @"http://pic.5tu.cn/uploads/allimg/1506/091630516760.jpg"
-                            ];
-        _goodsPriceArray = @[@(30.45),@(120.09),@(7.8),@(11.11),@(56.1),@(12)];
-        _goodsQuantityArray = @[@(12),@(21),@(1),@(10),@(3),@(5)];
-    }
+/// 加载数据
+- (void)requestShopcartProductList{
     
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"shopcart" ofType:@"plist"];
+    NSMutableArray *dataArray = [NSMutableArray arrayWithContentsOfFile:plistPath];
+    self.shopcartListArray = [JXShopcartBrandModel mj_objectArrayWithKeyValuesArray:dataArray];
     
-    return self;
+    //成功之后回调
+    [self.delegate shopcartFormatRequestProductListDidSuccessWithArray:self.shopcartListArray];
 }
 
 
-#pragma mark - 网络加载数据
-
-// 获取数据
-- (void)getData{
-    //数据个数
-    NSInteger allCount = 20;
-    NSInteger allGoodsCount = 0;
-    NSMutableArray *storeArray = [NSMutableArray arrayWithCapacity:allCount];
-    NSMutableArray *shopSelectAarry = [NSMutableArray arrayWithCapacity:allCount];
+/// 用户选中了某个产品或某个row的处理方法，因为这会改变底部结算视图所以一定会回调上文协议中的第二个方法。
+- (void)selectProductAtIndexPath:(NSIndexPath *)indexPath isSelected:(BOOL)isSelected {
+    JXShopcartBrandModel *brandModel = self.shopcartListArray[indexPath.section];
+    JXShopcartProductModel *productModel = brandModel.products[indexPath.row];
+    productModel.isSelected = isSelected;
     
-    //创造店铺数据
-    for (int i = 0; i < allCount; i++) {
-        
-        //创造店铺下商品数据
-        NSInteger goodsCount = [_shopGoodsCount[self.random] intValue];
-        NSMutableArray *goodsArray = [NSMutableArray arrayWithCapacity:goodsCount];
-        
-        for (int x = 0; x < goodsCount; x++) {
-            JXCartModel *cartModel = [[JXCartModel alloc] init];
-            cartModel.p_id         = @"122115465400";
-            cartModel.p_price      = [_goodsPriceArray[self.random] floatValue];
-            cartModel.p_name       = [NSString stringWithFormat:@"%@这是一个很长很长的名字呀呀呀呀呀呀",@(x)];
-            cartModel.p_stock      = 10;
-            cartModel.p_imageUrl   = _goodsPicArray[self.random];
-            cartModel.p_quantity   = [_goodsQuantityArray[self.random] integerValue];
-            [goodsArray addObject:cartModel];
-            allGoodsCount++;
-        }
-        
-        [storeArray addObject:goodsArray];
-        [shopSelectAarry addObject:@(NO)];
-        
-    }
-    self.cartData = storeArray;
-    self.shopSelectArray = shopSelectAarry;
-    self.cartGoodsCount = allGoodsCount;
-}
-
-
-- (NSInteger)random{
+    BOOL isBrandSelected = YES;
     
-    NSInteger from = 0;
-    NSInteger to   = 5;
-    
-    return (NSInteger)(from + (arc4random() % (to - from + 1)));
-    
-}
-
-
-
-
-// 数量改变
-- (void)rowChangeQuantity:(NSInteger)quantity
-                indexPath:(NSIndexPath *)indexPath{
-    
-    NSInteger section  = indexPath.section;
-    NSInteger row      = indexPath.row;
-    
-    JXCartModel *model = self.cartData[section][row];
-    
-    /// KVC
-    [model setValue:@(quantity) forKey:@"p_quantity"];
-    
-    [self.cartTableView reloadSections:[NSIndexSet indexSetWithIndex:section] withRowAnimation:UITableViewRowAnimationNone];
-    
-    /*重新计算价格*/
-    self.allPrices = [self getAllPrices];
-    
-}
-
-
-
-//选中那个商品
-- (void)rowSelect:(BOOL)isSelect
-        IndexPath:(NSIndexPath *)indexPath{
-    
-    NSInteger section          = indexPath.section;
-    NSInteger row              = indexPath.row;
-    
-    NSMutableArray *goodsArray = self.cartData[section];
-    NSInteger shopCount        = goodsArray.count;
-    JXCartModel *model         = goodsArray[row];
-    [model setValue:@(isSelect) forKey:@"isSelect"];
-    
-    //判断是都到达足够数量
-    NSInteger isSelectShopCount = 0;
-    for (JXCartModel *model in goodsArray) {
-        if (model.isSelect) {
-            isSelectShopCount++;
+    for (JXShopcartProductModel *aProductModel in brandModel.products) {
+        if (aProductModel.isSelected == NO) {
+            isBrandSelected = NO;
         }
     }
     
-    [self.shopSelectArray replaceObjectAtIndex:section withObject:@(isSelectShopCount == shopCount ? YES : NO)];
+    brandModel.isSelected = isBrandSelected;
     
-    [self.cartTableView reloadSections:[NSIndexSet indexSetWithIndex:section] withRowAnimation:UITableViewRowAnimationNone];
-    
-    /*重新计算价格*/
-    self.allPrices = [self getAllPrices];
-    
+    [self.delegate shopcartFormatAccountForTotalPrice:[self accountTotalPrice] totalCount:[self accountTotalCount] isAllSelected:[self isAllSelected]];
 }
 
-//获取价格
-- (float)getAllPrices{
+
+
+/// 用户选中了某个品牌或某个section的处理方法
+- (void)selectBrandAtSection:(NSInteger)section isSelected:(BOOL)isSelected {
+    JXShopcartBrandModel *brandModel = self.shopcartListArray[section];
+    brandModel.isSelected = isSelected;
     
-    __block float allPrices   = 0;
-    
-    NSInteger shopCount       = self.cartData.count;
-    NSInteger shopSelectCount = self.shopSelectArray.count;
-    
-    /// 判断是否全部选中
-    if (shopSelectCount == shopCount && shopCount!=0) {
-        self.isSelectAll = YES;
+    for (JXShopcartProductModel *aProductModel in brandModel.products) {
+        aProductModel.isSelected = brandModel.isSelected;
     }
     
-
-    
-    return allPrices;
-
+    [self.delegate shopcartFormatAccountForTotalPrice:[self accountTotalPrice] totalCount:[self accountTotalCount] isAllSelected:[self isAllSelected]];
 }
+
+
+
+/// 这是用户改变了商品数量的处理方法
+- (void)changeCountAtIndexPath:(NSIndexPath *)indexPath count:(NSInteger)count {
+    JXShopcartBrandModel *brandModel = self.shopcartListArray[indexPath.section];
+    JXShopcartProductModel *productModel = brandModel.products[indexPath.row];
+    if (count <= 0) {
+        count = 1;
+    } else if (count > productModel.productStocks) {
+        count = productModel.productStocks;
+    }
+    
+    //根据请求结果决定是否改变数据
+    productModel.productQty = count;
+    
+    [self.delegate shopcartFormatAccountForTotalPrice:[self accountTotalPrice] totalCount:[self accountTotalCount] isAllSelected:[self isAllSelected]];
+}
+
+
+/// 删除操作
+- (void)deleteProductAtIndexPath:(NSIndexPath *)indexPath {
+    JXShopcartBrandModel *brandModel = self.shopcartListArray[indexPath.section];
+    JXShopcartProductModel *productModel = brandModel.products[indexPath.row];
+    
+    // 根据请求结果决定是否删除
+    [brandModel.products removeObject:productModel];
+    if (brandModel.products.count == 0) {
+        [self.shopcartListArray removeObject:brandModel];
+        
+    } else {
+        if (!brandModel.isSelected) {
+            BOOL isBrandSelected = YES;
+            for (JXShopcartProductModel *aProductModel in brandModel.products) {
+                if (!aProductModel.isSelected) {
+                    isBrandSelected = NO;
+                    break;
+                }
+            }
+            
+            if (isBrandSelected) {
+                brandModel.isSelected = YES;
+            }
+        }
+    }
+    
+    [self.delegate shopcartFormatAccountForTotalPrice:[self accountTotalPrice] totalCount:[self accountTotalCount] isAllSelected:[self isAllSelected]];
+    
+    /// 删除全部
+    if (self.shopcartListArray.count == 0) {
+        [self.delegate shopcartFormatHasDeleteAllProducts];
+    }
+}
+
+
+- (void)beginToDeleteSelectedProducts {
+    NSMutableArray *selectedArray = [[NSMutableArray alloc] init];
+    for (JXShopcartBrandModel *brandModel in self.shopcartListArray) {
+        for (JXShopcartProductModel *productModel in brandModel.products) {
+            if (productModel.isSelected) {
+                [selectedArray addObject:productModel];
+            }
+        }
+    }
+    
+    [self.delegate shopcartFormatWillDeleteSelectedProducts:selectedArray];
+}
+
+// 批量删除
+- (void)deleteSelectedProducts:(NSArray *)selectedArray {
+    //网络请求
+    //根据请求结果决定是否批量删除
+    NSMutableArray *emptyArray = [[NSMutableArray alloc] init];
+    for (JXShopcartBrandModel *brandModel in self.shopcartListArray) {
+        [brandModel.products removeObjectsInArray:selectedArray];
+        
+        if (brandModel.products.count == 0) {
+            [emptyArray addObject:brandModel];
+        }
+    }
+    
+    if (emptyArray.count) {
+        [self.shopcartListArray removeObjectsInArray:emptyArray];
+    }
+    
+    [self.delegate shopcartFormatAccountForTotalPrice:[self accountTotalPrice] totalCount:[self accountTotalCount] isAllSelected:[self isAllSelected]];
+    
+    if (self.shopcartListArray.count == 0) {
+        [self.delegate shopcartFormatHasDeleteAllProducts];
+    }
+}
+
+
+
+/// 收藏
+- (void)starProductAtIndexPath:(NSIndexPath *)indexPath {
+    //这里写收藏的网络请求
+    
+}
+
+- (void)starSelectedProducts {
+    //这里写批量收藏的网络请求
+    
+}
+
+
+/// 全选操作
+- (void)selectAllProductWithStatus:(BOOL)isSelected {
+    for (JXShopcartBrandModel *brandModel in self.shopcartListArray) {
+        brandModel.isSelected = isSelected;
+        for (JXShopcartProductModel *productModel in brandModel.products) {
+            productModel.isSelected = isSelected;
+        }
+    }
+    
+    [self.delegate shopcartFormatAccountForTotalPrice:[self accountTotalPrice] totalCount:[self accountTotalCount] isAllSelected:[self isAllSelected]];
+}
+
+/// 结算
+- (void)settleSelectedProducts {
+    NSMutableArray *settleArray = [[NSMutableArray alloc] init];
+    for (JXShopcartBrandModel *brandModel in self.shopcartListArray) {
+        NSMutableArray *selectedArray = [[NSMutableArray alloc] init];
+        for (JXShopcartProductModel *productModel in brandModel.products) {
+            if (productModel.isSelected) {
+                [selectedArray addObject:productModel];
+            }
+        }
+        
+        brandModel.selectedArray = selectedArray;
+        
+        if (selectedArray.count) {
+            [settleArray addObject:brandModel];
+        }
+    }
+    
+    [self.delegate shopcartFormatSettleForSelectedProducts:settleArray];
+}
+
+#pragma  mark - 私有方法
+/// 计算总价
+- (float)accountTotalPrice {
+    float totalPrice = 0.f;
+    for (JXShopcartBrandModel *brandModel in self.shopcartListArray) {
+        for (JXShopcartProductModel *productModel in brandModel.products) {
+            if (productModel.isSelected) {
+                totalPrice += productModel.productPrice * productModel.productQty;
+            }
+        }
+    }
+    
+    return totalPrice;
+}
+
+/// 商品数量
+- (NSInteger)accountTotalCount {
+    NSInteger totalCount = 0;
+    
+    for (JXShopcartBrandModel *brandModel in self.shopcartListArray) {
+        for (JXShopcartProductModel *productModel in brandModel.products) {
+            if (productModel.isSelected) {
+                totalCount += productModel.productQty;
+            }
+        }
+    }
+    
+    return totalCount;
+}
+
+/// 判断该店铺的商品是否全部选中
+- (BOOL)isAllSelected {
+    if (self.shopcartListArray.count == 0) return NO;
+    
+    BOOL isAllSelected = YES;
+    
+    for (JXShopcartBrandModel *brandModel in self.shopcartListArray) {
+        if (brandModel.isSelected == NO) {
+            isAllSelected = NO;
+        }
+    }
+    
+    return isAllSelected;
+}
+
+
 @end

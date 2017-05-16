@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-@class JXCartModel;
+@class JXShopcartProductModel;
 
 @interface JXShopCartCell : UITableViewCell
 
@@ -17,7 +17,7 @@ typedef void(^JXShopcartCellEditBlock)(NSInteger count);
 @property (nonatomic, copy) JXShopcartCellBlock shopcartCellBlock;
 @property (nonatomic, copy) JXShopcartCellEditBlock shopcartCellEditBlock;
 
-@property(nonatomic, strong) JXCartModel *model;
+@property(nonatomic, strong) JXShopcartProductModel *model;
 
 - (void)configureShopcartCellWithProductURL:(NSString *)productURL
                                 productName:(NSString *)productName
@@ -30,4 +30,5 @@ typedef void(^JXShopcartCellEditBlock)(NSInteger count);
 
 
 + (CGFloat)getCartCellHeight;
+
 @end
