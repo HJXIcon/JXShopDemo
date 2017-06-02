@@ -21,5 +21,9 @@
 /** delegate*/
 @property (nonatomic, weak)id<JXStoreHomeViewControllerDelegate> homeDelegate;
 
+/** 偏移量*/
+@property (nonatomic, assign, readonly)CGFloat offSetY;
+
+- (void)scrollToOffSetY:(CGFloat) offSetY;
 
 @end

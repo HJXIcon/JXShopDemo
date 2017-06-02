@@ -22,9 +22,45 @@ static CGFloat const kMaxOffset = 230;
 @property (nonatomic, assign) BOOL isInitial;
 @property(nonatomic, assign) CGFloat lastCollectionViewOffsetY;
 
+/** 上一个控制器的index*/
+@property (nonatomic, assign)NSInteger lastHomeVC_Index;
 @end
 
 @implementation JXStoreBaseMenuViewController
+#pragma mark - lazy load
+- (JXStoreInfoHeaderView *)brandHeaderView{
+    if (_brandHeaderView == nil) {
+        _brandHeaderView = [[JXStoreInfoHeaderView alloc]initWithFrame:CGRectMake(0, 0, kScreenW, 64)];
+        _brandHeaderView.backgroundColor = [UIColor clearColor];
+        kWeakSelf(self);
+        _brandHeaderView.goBackBlock = ^(){
+            
+            [weakself.navigationController popViewControllerAnimated:YES];
+        };
+    }
+    return _brandHeaderView;
+}
+
+
+- (SDCycleScrollView *)cycleScrollView {
+    
+    if (!_cycleScrollView) {
+        
+        NSMutableArray *imageMutableArray = [NSMutableArray array];
+        for (int i = 1; i<9; i++) {
+            NSString *imageName = [NSString stringWithFormat:@"cycle_%02d.jpg",i];
+            [imageMutableArray addObject:imageName];
+        }
+        
+        _cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, kScreenW, 230) imageNamesGroup:imageMutableArray];
+        
+        
+    }
+    return _cycleScrollView;
+}
+
+
+
 
 - (NSMutableArray *)titleButtons
 {
@@ -52,6 +88,12 @@ static CGFloat const kMaxOffset = 230;
     
     // iOS7之后，如果是导航控制器下scrollView,顶部都会添加64的额外滚动区域
     self.automaticallyAdjustsScrollViewInsets = NO;
+    
+    // 滚动视图
+    [self.view addSubview:self.cycleScrollView];
+    // 替换导航View
+    [self.view addSubview:self.brandHeaderView];
+
     
 }
 
@@ -253,6 +295,20 @@ static CGFloat const kMaxOffset = 230;
     // 选中对应的标题
     [self selButton:self.titleButtons[i]];
 
+    
+    JXStoreHomeViewController *lastHomeVC = self.childViewControllers[self.lastHomeVC_Index];
+    JXLog(@"homeVCOffsetY == %f",lastHomeVC.offSetY);
+    
+    JXStoreHomeViewController *currentHomeVC = self.childViewControllers[i];
+    
+    [currentHomeVC scrollToOffSetY:lastHomeVC.offSetY];
+    
+    
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+    
+     self.lastHomeVC_Index  = scrollView.contentOffset.x / kScreenW;
     
 }
 

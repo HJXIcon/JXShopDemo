@@ -17,51 +17,12 @@
 static CGFloat const kMaxOffset = 230;
 @interface JXStoreInfoViewController ()<JXStoreHomeViewControllerDelegate>
 
-/**
- 替换导航条View
- */
-@property(nonatomic, strong)JXStoreInfoHeaderView *brandHeaderView;
-@property (nonatomic, strong) SDCycleScrollView *cycleScrollView;
 @property(nonatomic, assign) CGFloat lastCollectionViewOffsetY;
-
-
 
 @end
 
 @implementation JXStoreInfoViewController
 
-#pragma mark - lazy load
-
-- (JXStoreInfoHeaderView *)brandHeaderView{
-    if (_brandHeaderView == nil) {
-        _brandHeaderView = [[JXStoreInfoHeaderView alloc]initWithFrame:CGRectMake(0, 0, kScreenW, 64)];
-        _brandHeaderView.backgroundColor = [UIColor clearColor];
-        kWeakSelf(self);
-        _brandHeaderView.goBackBlock = ^(){
-            
-            [weakself.navigationController popViewControllerAnimated:YES];
-        };
-    }
-    return _brandHeaderView;
-}
-
-
-- (SDCycleScrollView *)cycleScrollView {
-    
-    if (!_cycleScrollView) {
-        
-        NSMutableArray *imageMutableArray = [NSMutableArray array];
-        for (int i = 1; i<9; i++) {
-            NSString *imageName = [NSString stringWithFormat:@"cycle_%02d.jpg",i];
-            [imageMutableArray addObject:imageName];
-        }
-        
-        _cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, kScreenW, 230) imageNamesGroup:imageMutableArray];
-        
-        
-    }
-    return _cycleScrollView;
-}
 
 #pragma mark - cycle life
 
@@ -71,11 +32,6 @@ static CGFloat const kMaxOffset = 230;
     
     // 添加所有的子控制器
     [self setupAllChildViewController];
-    
-//    self.brandHeaderView.collectViews = self.collectionViews;
-    
-    [self.view addSubview:self.cycleScrollView];
-    [self.view addSubview:self.brandHeaderView];
     
     
     
@@ -129,7 +85,7 @@ static CGFloat const kMaxOffset = 230;
 
 #pragma mark - JXStoreHomeViewControllerDelegate
 - (void)collectionViewoffsetY:(CGFloat)offsetY homeVC:(JXStoreHomeViewController *)homeVC{
-    
+
     /// 设置offsetY
     self.brandHeaderView.offsetY = offsetY;
     
