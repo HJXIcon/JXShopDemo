@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+@class JXShopcartBrandModel;
+
 @protocol JXShopcartFormatDelegate <NSObject>
 
 @required
@@ -29,12 +31,16 @@
 - (void)shopcartFormatWillDeleteSelectedProducts:(NSArray *)selectedProducts;
 - (void)shopcartFormatHasDeleteAllProducts;
 
+/// 点击店铺点跳转到店铺详情
+- (void)shopcartFormatClickStoreName:(NSString *)storeID;
+
 @end
 
 
 @interface JXShopCarViewModel : NSObject
 
-@property (nonatomic, strong) NSMutableArray *shopcartListArray;    /**< 购物车数据源 */
+
+@property (nonatomic, strong) NSMutableArray <JXShopcartBrandModel *>*shopcartListArray;    /**< 购物车数据源 */
 
 @property (nonatomic, weak) id <JXShopcartFormatDelegate> delegate;
 
@@ -48,6 +54,10 @@
 
 /// 选中店铺
 - (void)selectBrandAtSection:(NSInteger)section isSelected:(BOOL)isSelected;
+
+/// 点击店铺
+- (void)clickBrandAtSection:(NSInteger)section;
+
 
 /// 数量改变
 - (void)changeCountAtIndexPath:(NSIndexPath *)indexPath count:(NSInteger)count;

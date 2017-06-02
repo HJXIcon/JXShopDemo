@@ -64,6 +64,14 @@
 }
 
 
+/// 点击店铺
+- (void)clickBrandAtSection:(NSInteger)section{
+    
+    JXShopcartBrandModel *brandModel = self.shopcartListArray[section];
+    
+    [self.delegate shopcartFormatClickStoreName:brandModel.brandId];
+}
+
 
 /// 这是用户改变了商品数量的处理方法
 - (void)changeCountAtIndexPath:(NSIndexPath *)indexPath count:(NSInteger)count {

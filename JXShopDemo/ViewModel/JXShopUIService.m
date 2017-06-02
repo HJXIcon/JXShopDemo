@@ -75,10 +75,19 @@
     shopcartHeaderView.model = brandModel;
     
     __weak __typeof(self) weakSelf = self;
+    /// 选择店铺
     shopcartHeaderView.selectStoreBlock = ^(BOOL isSelected){
         
         if (weakSelf.shopcartProxyBrandSelectBlock) {
             weakSelf.shopcartProxyBrandSelectBlock(isSelected, section);
+        }
+    };
+    
+    /// 点击店铺名字
+    shopcartHeaderView.clickNameBlock = ^(){
+        
+        if (weakSelf.shopcartProxyBrandClickBlock) {
+            weakSelf.shopcartProxyBrandClickBlock(section);
         }
     };
     

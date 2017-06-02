@@ -15,6 +15,8 @@ typedef void(^JXShopcartProxyProductSelectBlock)(BOOL isSelected, NSIndexPath *i
 
 typedef void(^JXShopcartProxyBrandSelectBlock)(BOOL isSelected, NSInteger section);
 
+typedef void(^JXShopcartProxyBrandClickBlock)(NSInteger section);
+
 typedef void(^JXShopcartProxyChangeCountBlock)(NSInteger count, NSIndexPath *indexPath);
 
 typedef void(^JXShopcartProxyDeleteBlock)(NSIndexPath *indexPath);
@@ -32,6 +34,9 @@ typedef void(^JXShopcartProxyStarBlock)(NSIndexPath *indexPath);
 
 /// 选中店铺
 @property (nonatomic, copy) JXShopcartProxyBrandSelectBlock shopcartProxyBrandSelectBlock;
+
+/// 点击店铺名字
+@property(nonatomic, copy) JXShopcartProxyBrandClickBlock shopcartProxyBrandClickBlock;
 
 /// 数量改变
 @property (nonatomic, copy) JXShopcartProxyChangeCountBlock shopcartProxyChangeCountBlock;

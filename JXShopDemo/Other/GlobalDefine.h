@@ -6,6 +6,7 @@
 //  Copyright © 2016年 Lingxiu. All rights reserved.
 //
 
+
 #ifndef GlobalDefine_h
 #define GlobalDefine_h
 
@@ -56,5 +57,13 @@
 
 /** 字体 */
 #define JXFont(font) [UIFont systemFontOfSize:(font)]
+
+/**! Dubug相关*/
+#ifdef DEBUG
+#define JXLog(format,...)  NSLog((@"[函数名:%s]\n" "[行号:%d]\n" format),__FUNCTION__,__LINE__,##__VA_ARGS__)
+#else
+#define JXLog(...)
+#endif
+
 
 #endif /* GlobalDefine_h */

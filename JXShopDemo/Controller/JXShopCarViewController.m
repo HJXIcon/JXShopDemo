@@ -13,6 +13,7 @@
 #import "JXShopCartCell.h"
 #import "JXShopcartBottomView.h"
 #import <Masonry/Masonry.h>
+#import "JXStoreInfoViewController.h"
 
 
 @interface JXShopCarViewController ()<JXShopcartFormatDelegate>
@@ -118,6 +119,12 @@
              [weakself.viewModel selectBrandAtSection:section isSelected:isSelected];
         };
         
+        /// 点击店铺
+        _service.shopcartProxyBrandClickBlock = ^(NSInteger section){
+        
+            [weakself.viewModel clickBrandAtSection:section];
+        };
+        
         /// 商品选择
         _service.shopcartProxyProductSelectBlock = ^(BOOL isSelected, NSIndexPath *indexPath){
             
@@ -144,6 +151,7 @@
             
         };
         
+        /// 收藏
         _service.shopcartProxyStarBlock = ^(NSIndexPath *indexPath){
             
              [weakself.viewModel starProductAtIndexPath:indexPath];
@@ -240,6 +248,14 @@
     
 }
 
+
+- (void)shopcartFormatClickStoreName:(NSString *)storeID{
+ 
+    JXStoreInfoViewController *vc = [[JXStoreInfoViewController alloc]init];
+    
+    vc.brandId = storeID;
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 
 @end

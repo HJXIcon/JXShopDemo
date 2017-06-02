@@ -67,7 +67,7 @@
     [self.selectStoreGoodsButton addTarget:self action:@selector(selectStoreAction) forControlEvents:UIControlEventTouchUpInside];
     
     
-    [self.selectStoreGoodsButton addTarget:self action:@selector(storeNameAction) forControlEvents:UIControlEventTouchUpInside];
+    [self.storeNameButton addTarget:self action:@selector(storeNameAction) forControlEvents:UIControlEventTouchUpInside];
 }
 
 #pragma mark - Actions
