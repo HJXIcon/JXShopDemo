@@ -20,4 +20,5 @@
 @property(nonatomic, strong)JXStoreInfoHeaderView *brandHeaderView;
 @property (nonatomic, strong) SDCycleScrollView *cycleScrollView;
 
+@property (nonatomic, weak) UICollectionView *collectionView;
 @end

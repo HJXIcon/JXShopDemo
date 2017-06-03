@@ -11,7 +11,7 @@
 
 @interface JXStoreHomeViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
 
-@property (nonatomic, strong) UICollectionView *collectionView;
+
 @property(nonatomic, assign) CGFloat lastCollectionViewOffsetY;
 
 

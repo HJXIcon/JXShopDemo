@@ -116,6 +116,36 @@ static CGFloat const kMaxOffset = 230;
 
 }
 
+#pragma mark -UIScrollViewDelegate
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    
+    if (scrollView != self.collectionView) {
+        return;
+    }
+    
+    int index =  scrollView.contentOffset.x/scrollView.frame.size.width;
+    
+   
+    JXLog(@"offset == %f",self.lastCollectionViewOffsetY);
+    JXStoreHomeViewController *homeVC = self.childViewControllers[index];
+
+    
+        if ( self.lastCollectionViewOffsetY>=0 &&  self.lastCollectionViewOffsetY<=kMaxOffset) {
+            
+            homeVC.collectionView.contentOffset = CGPointMake(0,  self.lastCollectionViewOffsetY);
+            
+        }else if(  self.lastCollectionViewOffsetY < 0){
+            
+            homeVC.collectionView.contentOffset = CGPointMake(0, 0);
+            
+        }else if ( self.lastCollectionViewOffsetY > kMaxOffset){
+            
+            homeVC.collectionView.contentOffset = CGPointMake(0, kMaxOffset);
+        }
+    
+}
+
+
 
 
 @end

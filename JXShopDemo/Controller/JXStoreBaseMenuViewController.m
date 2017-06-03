@@ -15,15 +15,10 @@ static CGFloat const kMaxOffset = 230;
 
 @interface JXStoreBaseMenuViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
 
-@property (nonatomic, weak) UICollectionView *collectionView;
 @property (nonatomic, weak) UIButton *selButton;
 @property (nonatomic, strong) NSMutableArray *titleButtons;
 @property (nonatomic, weak) UIView *underLineView;
 @property (nonatomic, assign) BOOL isInitial;
-@property(nonatomic, assign) CGFloat lastCollectionViewOffsetY;
-
-/** 上一个控制器的index*/
-@property (nonatomic, assign)NSInteger lastHomeVC_Index;
 @end
 
 @implementation JXStoreBaseMenuViewController
@@ -294,23 +289,9 @@ static CGFloat const kMaxOffset = 230;
     NSInteger i = scrollView.contentOffset.x / kScreenW;
     // 选中对应的标题
     [self selButton:self.titleButtons[i]];
-
-    
-    JXStoreHomeViewController *lastHomeVC = self.childViewControllers[self.lastHomeVC_Index];
-    JXLog(@"homeVCOffsetY == %f",lastHomeVC.offSetY);
-    
-    JXStoreHomeViewController *currentHomeVC = self.childViewControllers[i];
-    
-    [currentHomeVC scrollToOffSetY:lastHomeVC.offSetY];
-    
     
 }
 
-- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
-    
-     self.lastHomeVC_Index  = scrollView.contentOffset.x / kScreenW;
-    
-}
 
 
 
