@@ -192,6 +192,8 @@ static CGFloat const kMaxOffset = 230;
      即使滚动了 也拿不到，contentOffset 延迟 ，并不是马上滚动。
      
      */
+   
+    
 }
 
 #pragma mark - 选中按钮

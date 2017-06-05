@@ -10,6 +10,7 @@
 #import "JXStoreInfoHeaderView.h"
 #import <SDCycleScrollView/SDCycleScrollView.h>
 
+
 @interface JXStoreBaseMenuViewController : UIViewController
 
 @property (nonatomic, weak) UIScrollView *topView;
@@ -21,4 +22,7 @@
 @property (nonatomic, strong) SDCycleScrollView *cycleScrollView;
 
 @property (nonatomic, weak) UICollectionView *collectionView;
+
+
+
 @end
