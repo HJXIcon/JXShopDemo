@@ -12,8 +12,6 @@
 @interface JXStoreHomeViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
 
 
-@property(nonatomic, assign) CGFloat lastCollectionViewOffsetY;
-
 
 @end
 
@@ -91,20 +89,11 @@
         [self.homeDelegate collectionViewoffsetY:collectionViewoffsetY homeVC:self];
     }
  
-    self.lastCollectionViewOffsetY = collectionViewoffsetY;
+    
     
 }
 
 
-#pragma mark - getter
-- (CGFloat)offSetY{
-    return self.lastCollectionViewOffsetY;
-}
-
-- (void)scrollToOffSetY:(CGFloat) offSetY{
-    
-    self.collectionView.contentOffset = CGPointMake(0, offSetY);
-}
 
 #pragma mark - 数据源
 
