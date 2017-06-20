@@ -36,8 +36,8 @@
 ### 购物车效果图
 ![image](https://github.com/HJXIcon/JXShopDemo/blob/master/JXShopDemo/images/shopCart.gif)
 
-### 店铺效果图
-![image](https://github.com/HJXIcon/JXShopDemo/blob/master/JXShopDemo/images/storeDetail.gif)
+### 店铺详情效果图
+![image](https://github.com/HJXIcon/JXShopDemo/blob/master/JXShopDemo/images/shopDetail.gif)
 
 
 
