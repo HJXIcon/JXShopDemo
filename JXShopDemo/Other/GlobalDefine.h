@@ -2,9 +2,7 @@
 //  GlobalDefine.h
 //  chooseGoods_Attr
 //
-//  Created by Lingxiu on 16/4/6.
-//  Copyright © 2016年 Lingxiu. All rights reserved.
-//
+
 
 
 #ifndef GlobalDefine_h

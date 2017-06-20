@@ -3,6 +3,7 @@ PODS:
   - Masonry (1.0.2)
   - MJExtension (3.0.13)
   - MJRefresh (3.1.12)
+  - ReactiveObjC (3.0.0)
   - SDCycleScrollView (1.65):
     - SDWebImage (~> 3.7)
   - SDWebImage (3.8.2):
@@ -14,6 +15,7 @@ DEPENDENCIES:
   - Masonry (~> 1.0.2)
   - MJExtension (~> 3.0.13)
   - MJRefresh (~> 3.1.12)
+  - ReactiveObjC (~> 3.0.0)
   - SDCycleScrollView (~> 1.65)
   - SDWebImage (~> 3.8.2)
 
@@ -22,9 +24,10 @@ SPEC CHECKSUMS:
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  ReactiveObjC: ce79989e8684b9086b5f8d0c74bc7b81a8729c9e
   SDCycleScrollView: f72904c77698a7f93a41bcbbc2d78b073bf7326c
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
 
-PODFILE CHECKSUM: 90e2c3cc2df78b262dab7c1d15846bf6fb29e2b5
+PODFILE CHECKSUM: 1a179d5c578adfaaca287d6761958e3d513323ba
 
-COCOAPODS: 1.2.0.beta.1
+COCOAPODS: 1.2.1

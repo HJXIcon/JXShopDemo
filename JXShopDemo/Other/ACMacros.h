@@ -1,9 +1,6 @@
 //
 //  ACMacros.h
 //
-//  Created by 宝胜利 on 15/3/25.
-//  Copyright (c) 2015年 http://www.hangyequan.com. All rights reserved.
-//
 
 #ifndef ACMacros_h
 #define ACMacros_h
@@ -56,10 +53,15 @@
 // 宽
 #define kWIDTH [UIScreen mainScreen].bounds.size.width
 #define kScreenW [UIScreen mainScreen].bounds.size.width
+
+#define kScreenWidth kScreenW
+
+
 // 高
 #define kHEIGHT [UIScreen mainScreen].bounds.size.height
 #define kScreenH [UIScreen mainScreen].bounds.size.height
 #define SCREENHEIGHT [UIScreen mainScreen].bounds.size.height - 64
+#define kScreenHeight kScreenH
 
 #define kSmallMargin 10
 #define kBigMargin 20

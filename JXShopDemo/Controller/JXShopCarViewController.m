@@ -13,7 +13,7 @@
 #import "JXShopCartCell.h"
 #import "JXShopcartBottomView.h"
 #import <Masonry/Masonry.h>
-#import "JXStoreInfoViewController.h"
+#import "JXShopDetailViewController.h"
 
 
 @interface JXShopCarViewController ()<JXShopcartFormatDelegate>
@@ -248,12 +248,11 @@
     
 }
 
-
+/// 店铺详情
 - (void)shopcartFormatClickStoreName:(NSString *)storeID{
  
-    JXStoreInfoViewController *vc = [[JXStoreInfoViewController alloc]init];
+    JXShopDetailViewController *vc = [[JXShopDetailViewController alloc]init];
     
-    vc.brandId = storeID;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
