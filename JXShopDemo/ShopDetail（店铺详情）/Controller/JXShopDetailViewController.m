@@ -16,8 +16,7 @@
 #import "JXShopDetailInfo.h"
 #import "LYSelectTabBar.h"
 #import "JXShopDetailTabScrollView.h"
-
-
+#import "JXSearchViewController.h"
 
 static CGFloat const HeaderHeight = 95;
 static CGFloat const TabBarHeight = 60;
@@ -190,6 +189,8 @@ static CGFloat const TabBarTopHeight = 35;
     if(!_navigationBar){
         _navigationBar = [[JXShopDetailNavigationBar alloc]init];
         [_navigationBar.backBtn addTarget:self action:@selector(pushBackAction) forControlEvents:UIControlEventTouchUpInside];
+        
+         [_navigationBar.searchBtn addTarget:self action:@selector(searchAction) forControlEvents:UIControlEventTouchUpInside];
     }
     return _navigationBar;
 }
@@ -220,6 +221,11 @@ static CGFloat const TabBarTopHeight = 35;
 #pragma mark - Actions
 - (void)pushBackAction{
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)searchAction{
+    
+    [self.navigationController pushViewController:[[JXSearchViewController alloc]init] animated:YES];
 }
 
 #pragma mark -

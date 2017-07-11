@@ -40,6 +40,8 @@
         _showTabImage = (selImage!=nil);
         [self setclickEnable:NO];
         [self configureContraints];
+        
+        
     }
     return self;
 }

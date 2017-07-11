@@ -14,7 +14,8 @@
 #import <Masonry/Masonry.h>
 #import <ReactiveObjC/ReactiveObjC.h>
 #import "UIColor+GGColor.h"
+#import "UIImage+JXExtension.h"
 #import "ACMacros.h"
-
+#import <SDAutoLayout/SDAutoLayout.h>
 
 #endif /* PrefixHeader_pch */

@@ -95,6 +95,15 @@
 		0448EE521EA8C9F0005D36DC /* UIView+JXShopCarAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0448EE511EA8C9F0005D36DC /* UIView+JXShopCarAnimation.m */; };
 		0448EE551EA8CBF0005D36DC /* JXGoodDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0448EE541EA8CBF0005D36DC /* JXGoodDetailsViewController.m */; };
 		0449D8A81EC5AF1E0000890F /* PPNumberButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0449D8A71EC5AF1E0000890F /* PPNumberButton.m */; };
+		0471446B1F14648500138DA5 /* JXNotSearchProductsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0471445F1F14648500138DA5 /* JXNotSearchProductsView.m */; };
+		0471446C1F14648500138DA5 /* JXSearchCollectionHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 047144611F14648500138DA5 /* JXSearchCollectionHeaderFooterView.m */; };
+		0471446D1F14648500138DA5 /* JXSearchCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 047144631F14648500138DA5 /* JXSearchCollectionView.m */; };
+		0471446E1F14648500138DA5 /* JXSearchSortView.m in Sources */ = {isa = PBXBuildFile; fileRef = 047144651F14648500138DA5 /* JXSearchSortView.m */; };
+		0471446F1F14648500138DA5 /* JXSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 047144671F14648500138DA5 /* JXSearchView.m */; };
+		047144701F14648500138DA5 /* JXSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 047144691F14648500138DA5 /* JXSearchViewController.m */; };
+		047144711F14648500138DA5 /* SearchProduct in Resources */ = {isa = PBXBuildFile; fileRef = 0471446A1F14648500138DA5 /* SearchProduct */; };
+		047144741F14692E00138DA5 /* JXProductSearchResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 047144731F14692E00138DA5 /* JXProductSearchResultCell.m */; };
+		047144771F146AAD00138DA5 /* UIImage+JXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 047144761F146AAD00138DA5 /* UIImage+JXExtension.m */; };
 		04982E451EC9A7CC0084E90F /* JXShopCartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04982E441EC9A7CC0084E90F /* JXShopCartCell.m */; };
 		049ED3341EA99A0B00F924E1 /* JXGoodDetailsPictureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 049ED3331EA99A0B00F924E1 /* JXGoodDetailsPictureCell.m */; };
 		049ED3371EA99EDB00F924E1 /* JXShopCarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 049ED3361EA99EDB00F924E1 /* JXShopCarViewController.m */; };
@@ -237,6 +246,23 @@
 		0448EE541EA8CBF0005D36DC /* JXGoodDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXGoodDetailsViewController.m; sourceTree = "<group>"; };
 		0449D8A61EC5AF1E0000890F /* PPNumberButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPNumberButton.h; sourceTree = "<group>"; };
 		0449D8A71EC5AF1E0000890F /* PPNumberButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPNumberButton.m; sourceTree = "<group>"; };
+		0471445E1F14648500138DA5 /* JXNotSearchProductsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXNotSearchProductsView.h; sourceTree = "<group>"; };
+		0471445F1F14648500138DA5 /* JXNotSearchProductsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXNotSearchProductsView.m; sourceTree = "<group>"; };
+		047144601F14648500138DA5 /* JXSearchCollectionHeaderFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXSearchCollectionHeaderFooterView.h; sourceTree = "<group>"; };
+		047144611F14648500138DA5 /* JXSearchCollectionHeaderFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXSearchCollectionHeaderFooterView.m; sourceTree = "<group>"; };
+		047144621F14648500138DA5 /* JXSearchCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXSearchCollectionView.h; sourceTree = "<group>"; };
+		047144631F14648500138DA5 /* JXSearchCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXSearchCollectionView.m; sourceTree = "<group>"; };
+		047144641F14648500138DA5 /* JXSearchSortView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXSearchSortView.h; sourceTree = "<group>"; };
+		047144651F14648500138DA5 /* JXSearchSortView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXSearchSortView.m; sourceTree = "<group>"; };
+		047144661F14648500138DA5 /* JXSearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXSearchView.h; sourceTree = "<group>"; };
+		047144671F14648500138DA5 /* JXSearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXSearchView.m; sourceTree = "<group>"; };
+		047144681F14648500138DA5 /* JXSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXSearchViewController.h; sourceTree = "<group>"; };
+		047144691F14648500138DA5 /* JXSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXSearchViewController.m; sourceTree = "<group>"; };
+		0471446A1F14648500138DA5 /* SearchProduct */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SearchProduct; sourceTree = "<group>"; };
+		047144721F14692D00138DA5 /* JXProductSearchResultCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXProductSearchResultCell.h; sourceTree = "<group>"; };
+		047144731F14692E00138DA5 /* JXProductSearchResultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXProductSearchResultCell.m; sourceTree = "<group>"; };
+		047144751F146AAD00138DA5 /* UIImage+JXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+JXExtension.h"; sourceTree = "<group>"; };
+		047144761F146AAD00138DA5 /* UIImage+JXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JXExtension.m"; sourceTree = "<group>"; };
 		04982E431EC9A7CC0084E90F /* JXShopCartCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXShopCartCell.h; sourceTree = "<group>"; };
 		04982E441EC9A7CC0084E90F /* JXShopCartCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXShopCartCell.m; sourceTree = "<group>"; };
 		049ED3321EA99A0B00F924E1 /* JXGoodDetailsPictureCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXGoodDetailsPictureCell.h; sourceTree = "<group>"; };
@@ -444,6 +470,7 @@
 		0448EE161EA85005005D36DC /* JXShopDemo */ = {
 			isa = PBXGroup;
 			children = (
+				0471445D1F1463EE00138DA5 /* Search */,
 				04C8080F1EF8BD100098DACC /* ShopDetail（店铺详情） */,
 				0443A6251EC5566000364970 /* images */,
 				0448EE351EA89FF7005D36DC /* Controller */,
@@ -545,6 +572,8 @@
 		0448EE3A1EA8A01B005D36DC /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				047144751F146AAD00138DA5 /* UIImage+JXExtension.h */,
+				047144761F146AAD00138DA5 /* UIImage+JXExtension.m */,
 				04C8081A1EF8BF1C0098DACC /* UIColor+GGColor.h */,
 				04C8081B1EF8BF1C0098DACC /* UIColor+GGColor.m */,
 				0443C9B51EE0FE2C00FDBDB1 /* UIButton+Size.h */,
@@ -581,6 +610,28 @@
 				0449D8A71EC5AF1E0000890F /* PPNumberButton.m */,
 			);
 			path = PPNumberButton;
+			sourceTree = "<group>";
+		};
+		0471445D1F1463EE00138DA5 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				0471445E1F14648500138DA5 /* JXNotSearchProductsView.h */,
+				0471445F1F14648500138DA5 /* JXNotSearchProductsView.m */,
+				047144601F14648500138DA5 /* JXSearchCollectionHeaderFooterView.h */,
+				047144611F14648500138DA5 /* JXSearchCollectionHeaderFooterView.m */,
+				047144621F14648500138DA5 /* JXSearchCollectionView.h */,
+				047144631F14648500138DA5 /* JXSearchCollectionView.m */,
+				047144641F14648500138DA5 /* JXSearchSortView.h */,
+				047144651F14648500138DA5 /* JXSearchSortView.m */,
+				047144661F14648500138DA5 /* JXSearchView.h */,
+				047144671F14648500138DA5 /* JXSearchView.m */,
+				047144681F14648500138DA5 /* JXSearchViewController.h */,
+				047144691F14648500138DA5 /* JXSearchViewController.m */,
+				047144721F14692D00138DA5 /* JXProductSearchResultCell.h */,
+				047144731F14692E00138DA5 /* JXProductSearchResultCell.m */,
+				0471446A1F14648500138DA5 /* SearchProduct */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		04C8080F1EF8BD100098DACC /* ShopDetail（店铺详情） */ = {
@@ -809,6 +860,7 @@
 				0443CA071EE0FFF800FDBDB1 /* home_watch.png in Resources */,
 				0443CA311EE0FFF800FDBDB1 /* header06@2x.jpg in Resources */,
 				0443CA031EE0FFF800FDBDB1 /* home_email_red.png in Resources */,
+				047144711F14648500138DA5 /* SearchProduct in Resources */,
 				0443CA051EE0FFF800FDBDB1 /* home_like.png in Resources */,
 				0443CA0D1EE0FFF800FDBDB1 /* tab_我的_pressed.png in Resources */,
 				0443CA391EE0FFF800FDBDB1 /* refresh03.png in Resources */,
@@ -888,8 +940,11 @@
 				04C8082B1EF8C4B80098DACC /* JXCommonCollectionView.m in Sources */,
 				0443C9BC1EE0FE2C00FDBDB1 /* UIImage+JQImage.m in Sources */,
 				04C808161EF8BD540098DACC /* JXShopDetailViewController.m in Sources */,
+				0471446E1F14648500138DA5 /* JXSearchSortView.m in Sources */,
+				0471446C1F14648500138DA5 /* JXSearchCollectionHeaderFooterView.m in Sources */,
 				04C808451EF8CFAA0098DACC /* LYSelectTabBar.m in Sources */,
 				04C808381EF8C5F70098DACC /* JXShopProductCollectionCellViewData.m in Sources */,
+				047144701F14648500138DA5 /* JXSearchViewController.m in Sources */,
 				04C8084B1EF8D1550098DACC /* JXShopDetailTabScrollViewModel.m in Sources */,
 				04982E451EC9A7CC0084E90F /* JXShopCartCell.m in Sources */,
 				04C8083E1EF8C9430098DACC /* JXShopDetailInfo.m in Sources */,
@@ -898,11 +953,13 @@
 				04C808481EF8D0F30098DACC /* JXShopDetailTabScrollView.m in Sources */,
 				049ED3341EA99A0B00F924E1 /* JXGoodDetailsPictureCell.m in Sources */,
 				0448EE3D1EA8A047005D36DC /* JXGoodAttributesView.m in Sources */,
+				0471446D1F14648500138DA5 /* JXSearchCollectionView.m in Sources */,
 				049ED3431EA9B75800F924E1 /* JXShopCarTableHeaderView.m in Sources */,
 				0443C9BD1EE0FE2C00FDBDB1 /* UIView+Extension.m in Sources */,
 				04C808411EF8C9660098DACC /* JXShopDetailUserCase.m in Sources */,
 				0448EE551EA8CBF0005D36DC /* JXGoodDetailsViewController.m in Sources */,
 				049ED33D1EA9B4E600F924E1 /* JXShopUIService.m in Sources */,
+				0471446F1F14648500138DA5 /* JXSearchView.m in Sources */,
 				04351EC91ECA94D9007A24D3 /* JXShopcartBrandModel.m in Sources */,
 				04C808251EF8C43F0098DACC /* JXShopDetailScrollView.m in Sources */,
 				04C8081F1EF8C3660098DACC /* JXShopDetailNavigationBar.m in Sources */,
@@ -918,15 +975,18 @@
 				0448EE4F1EA8BBC2005D36DC /* JXGoodAttributesCell.m in Sources */,
 				0448EE1C1EA85005005D36DC /* AppDelegate.m in Sources */,
 				0448EE191EA85005005D36DC /* main.m in Sources */,
+				047144771F146AAD00138DA5 /* UIImage+JXExtension.m in Sources */,
 				0449D8A81EC5AF1E0000890F /* PPNumberButton.m in Sources */,
 				0443C9BB1EE0FE2C00FDBDB1 /* UIButton+Size.m in Sources */,
 				04C808281EF8C4850098DACC /* JXShopDetailCollectionView.m in Sources */,
 				04C8082E1EF8C4EA0098DACC /* JXCommonCollectionViewModel.m in Sources */,
 				04C8083B1EF8C9110098DACC /* JXShopDetailViewModel.m in Sources */,
 				0448EE521EA8C9F0005D36DC /* UIView+JXShopCarAnimation.m in Sources */,
+				0471446B1F14648500138DA5 /* JXNotSearchProductsView.m in Sources */,
 				0448EE341EA8950F005D36DC /* UIScrollView+JXPage.m in Sources */,
 				04C808511EF8D4C10098DACC /* JXShopDetailCollectionViewModel.m in Sources */,
 				0448EE4C1EA8B04E005D36DC /* JXTagView.m in Sources */,
+				047144741F14692E00138DA5 /* JXProductSearchResultCell.m in Sources */,
 				04C8081C1EF8BF1C0098DACC /* UIColor+GGColor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
