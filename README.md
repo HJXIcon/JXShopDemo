@@ -39,5 +39,8 @@
 ### 店铺详情效果图
 ![image](https://github.com/HJXIcon/JXShopDemo/blob/master/JXShopDemo/images/shopDetail.gif)
 
+### RAC 
+![image](https://github.com/HJXIcon/JXShopDemo/blob/master/JXShopDemo/images/RAC.png)
+
 
 
