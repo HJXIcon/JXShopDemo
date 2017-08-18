@@ -58,6 +58,10 @@ static CGFloat const TabBarTopHeight = 35;
     
     [self configureContraints];
     [self bindViewModel];
+    
+    self.mianScrollView.backgroundColor = [UIColor redColor];
+    self.contentView.backgroundColor = [UIColor yellowColor];
+    
 }
 
 
@@ -92,9 +96,11 @@ static CGFloat const TabBarTopHeight = 35;
         CGFloat y = self.mianScrollView.contentOffset.y;
         if(offset>0){
             self.mianScrollView.contentOffset = CGPointMake(0, MIN((y+offset),(self.mianScrollView.contentSize.height-self.mianScrollView.frame.size.height)));
+            
         }else if (offset<0){
             self.mianScrollView.contentOffset = CGPointMake(0, MAX((y+offset),0));
         }
+        
         if(offset>0&&!self.scrollView.couldScroll&&y==0){
             self.scrollView.couldScroll = false;
         }else if (offset<0&&self.scrollView.couldScroll&&y>0){
@@ -105,6 +111,7 @@ static CGFloat const TabBarTopHeight = 35;
             self.scrollView.couldScroll = offset<=0?true:false;
         }
     }];
+    
     [self.scrollView setTabBarSelBlock:^(NSInteger index) {
         @strongify(self)
         [self.selectBar setSelectedIndex:index];

@@ -12,6 +12,7 @@
 
 @property (nonatomic,strong) JXCommonCollectionView *collectionView;
 @property (nonatomic,assign) BOOL couldScroll;
+
 @property (nonatomic,copy) void (^translationBlock)(CGFloat offset);
 
 //@property (nonatomic,strong,readonly) __kindof GMShopDetailCollectionViewModel *viewModel;

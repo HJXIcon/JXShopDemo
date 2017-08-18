@@ -95,6 +95,7 @@
 		0448EE521EA8C9F0005D36DC /* UIView+JXShopCarAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0448EE511EA8C9F0005D36DC /* UIView+JXShopCarAnimation.m */; };
 		0448EE551EA8CBF0005D36DC /* JXGoodDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0448EE541EA8CBF0005D36DC /* JXGoodDetailsViewController.m */; };
 		0449D8A81EC5AF1E0000890F /* PPNumberButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0449D8A71EC5AF1E0000890F /* PPNumberButton.m */; };
+		0464A4851F467F06000F82BE /* RAC.png in Resources */ = {isa = PBXBuildFile; fileRef = 0464A4841F467F06000F82BE /* RAC.png */; };
 		0471446B1F14648500138DA5 /* JXNotSearchProductsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0471445F1F14648500138DA5 /* JXNotSearchProductsView.m */; };
 		0471446C1F14648500138DA5 /* JXSearchCollectionHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 047144611F14648500138DA5 /* JXSearchCollectionHeaderFooterView.m */; };
 		0471446D1F14648500138DA5 /* JXSearchCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 047144631F14648500138DA5 /* JXSearchCollectionView.m */; };
@@ -246,6 +247,7 @@
 		0448EE541EA8CBF0005D36DC /* JXGoodDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXGoodDetailsViewController.m; sourceTree = "<group>"; };
 		0449D8A61EC5AF1E0000890F /* PPNumberButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPNumberButton.h; sourceTree = "<group>"; };
 		0449D8A71EC5AF1E0000890F /* PPNumberButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPNumberButton.m; sourceTree = "<group>"; };
+		0464A4841F467F06000F82BE /* RAC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RAC.png; sourceTree = "<group>"; };
 		0471445E1F14648500138DA5 /* JXNotSearchProductsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXNotSearchProductsView.h; sourceTree = "<group>"; };
 		0471445F1F14648500138DA5 /* JXNotSearchProductsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXNotSearchProductsView.m; sourceTree = "<group>"; };
 		047144601F14648500138DA5 /* JXSearchCollectionHeaderFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXSearchCollectionHeaderFooterView.h; sourceTree = "<group>"; };
@@ -343,6 +345,7 @@
 				04351ED11ECADE89007A24D3 /* shopCart.gif */,
 				04C808521EF8FC690098DACC /* shopDetail.gif */,
 				0443A6261EC556DC00364970 /* chooseGood.gif */,
+				0464A4841F467F06000F82BE /* RAC.png */,
 			);
 			path = images;
 			sourceTree = "<group>";
@@ -829,6 +832,7 @@
 				0443CA041EE0FFF800FDBDB1 /* home_emared.png in Resources */,
 				0443CA301EE0FFF800FDBDB1 /* header05@2x.jpg in Resources */,
 				0443CA3B1EE0FFF900FDBDB1 /* refresh05.png in Resources */,
+				0464A4851F467F06000F82BE /* RAC.png in Resources */,
 				0443CA0E1EE0FFF800FDBDB1 /* tab_首页.png in Resources */,
 				0443CA1B1EE0FFF800FDBDB1 /* recomand_04.jpg in Resources */,
 				0448EE241EA85005005D36DC /* Assets.xcassets in Resources */,

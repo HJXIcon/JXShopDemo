@@ -51,6 +51,8 @@
     self.contentSize = CGSizeMake(kScreenWidth*_subViews.count, self.frame.size.height);
 }
 
+#pragma mark - public Method
+
 - (void)showSubView:(NSInteger)index{
     //主动切换
     _currentShowIndex = index;
@@ -67,6 +69,7 @@
         view.couldScroll = scrollEnabled;
     }
 }
+
 - (void)setTranslationBlock:(void (^)(CGFloat))translationBlock{
     _translationBlock = translationBlock;
     for(UIView *view in _subViews){
@@ -87,7 +90,7 @@
     [(JXShopDetailCollectionView *)self.currentSubScorllView showNoNetWorkDefaultView];
 }
 
-#pragma mark --
+#pragma mark -- UIScrollViewDelegate
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
     
     //判断tab切换

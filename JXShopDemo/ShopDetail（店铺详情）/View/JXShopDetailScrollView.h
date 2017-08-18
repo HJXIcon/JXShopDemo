@@ -11,6 +11,7 @@
 @interface JXShopDetailScrollView : UIScrollView
 
 @property (nonatomic,strong,readonly) NSArray<UIView *> *subViews;
+// tab切换
 @property (nonatomic,copy) void (^tabBarSelBlock)(NSInteger index);
 @property (nonatomic,copy) void (^translationBlock)(CGFloat offset);
 @property (nonatomic,assign) BOOL couldScroll;

@@ -8,9 +8,6 @@
 
 #import "JXTagFrame.h"
 
-#define kScreenWidth [UIScreen mainScreen].bounds.size.width
-#define kScreenHeight [UIScreen mainScreen].bounds.size.height
-
 static CGFloat const tagHeight = 28;
 
 @implementation JXTagFrame
